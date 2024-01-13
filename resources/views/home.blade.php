@@ -1,8 +1,8 @@
 @extends('main')
 
-{{-- @section('title', 'Dashboard')
-    
-@endsection --}}
+@section('title')
+    Dashboard
+@endsection
 
 @section('breadcrumbs')
     <div class="breadcrumbs">
