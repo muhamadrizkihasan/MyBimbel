@@ -1,8 +1,6 @@
 @extends('layouts.main')
 
-@section('title')
-    Edulevel
-@endsection
+@section('title', 'Edulevel')
 
 @section('breadcrumbs')
     <div class="breadcrumbs">
@@ -13,28 +11,22 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-8">
-            <div class="page-header float-right">
-                <div class="page-title">
-                    <ol class="breadcrumb text-right">
-                        <li class="active">Data Edulevel</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
     </div>
 @endsection
 
 @section('content')
 <div class="content mt-3">
     <div class="animated fadeIn">
+        @if (session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
         <div class="card">
             <div class="card-header">
                 <div class="pull-left">
                     <strong>Data Jenjang</strong>
                 </div>
                 <div class="pull-right">
-                    <a href="" class="btn btn-primary btn-sm">
+                    <a href="{{ route('add') }}" class="btn btn-primary btn-sm">
                         <i class="fa fa-plus"></i> Add
                     </a>
                 </div>

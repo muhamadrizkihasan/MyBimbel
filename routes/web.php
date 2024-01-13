@@ -23,3 +23,5 @@ Route::get('/home', function () {
 });
 
 Route::get('/edulevels', [EdulevelController::class, 'data']);
+Route::get('/edulevels/add', [EdulevelController::class, 'add'])->name('add');
+Route::post('/edulevels', [EdulevelController::class, 'addProcess']);
