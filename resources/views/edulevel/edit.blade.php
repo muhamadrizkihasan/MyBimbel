@@ -29,17 +29,18 @@
                 </div>
             </div>
             <div class="card-body">
-                <form action="{{ route('addProcess') }}" method="post">
+                <form action="{{ route('editProcess', $edulevel->id) }}" method="post">
                     @csrf
+                    @method('patch')
                     <div class="form-group">
                         <label for="name">Nama Jenjang :</label>
-                        <input type="text" name="name" id="name" class="form-control" autofocus required>
+                        <input type="text" name="name" id="name" class="form-control" value="{{ $edulevel->name }}" autofocus required>
                     </div>
                     <div class="form-group">
                         <label for="desc">Deskripsi :</label>
-                        <input type="text" name="desc" id="desc" class="form-control" autofocus required>
+                        <input type="text" name="desc" id="desc" class="form-control" value="{{ $edulevel->desc }}" autofocus required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Tambah Data!</button>
+                    <button type="submit" class="btn btn-success">Ubah Data!</button>
                 </form>
             </div>
         </div>

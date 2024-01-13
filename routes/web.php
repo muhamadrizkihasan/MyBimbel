@@ -24,4 +24,6 @@ Route::get('/home', function () {
 
 Route::get('/edulevels', [EdulevelController::class, 'data']);
 Route::get('/edulevels/add', [EdulevelController::class, 'add'])->name('add');
-Route::post('/edulevels', [EdulevelController::class, 'addProcess']);
+Route::post('/edulevels', [EdulevelController::class, 'addProcess'])->name('addProcess');
+Route::get('/edulevels/edit/{id}', [EdulevelController::class, 'edit'])->name('edit');
+Route::patch('/edulevels/{id}', [EdulevelController::class, 'editProcess'])->name('editProcess');

@@ -20,6 +20,9 @@
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
+        @if (session('updated'))
+            <div class="alert alert-success">{{ session('updated') }}</div>
+        @endif
         <div class="card">
             <div class="card-header">
                 <div class="pull-left">
@@ -49,7 +52,7 @@
                                 <td>{{ $edulevel->desc }}</td>
                                 <td>
                                     <div class="text-center">
-                                        <a href="" class="btn btn-success btn-sm">
+                                        <a href="{{ route('edit', $edulevel->id) }}" class="btn btn-success btn-sm">
                                             <i class="fa fa-pencil"></i> Edit
                                         </a>
                                     </div>

@@ -26,6 +26,23 @@ class EdulevelController extends Controller
             'desc' => $request->desc,
         ]);
 
-        return redirect('edulevels')->witt('success', 'Jenjang berhasil ditambahkan!');
+        return redirect('edulevels')->with('success', 'Jenjang berhasil ditambahkan!');
+    }
+
+    public function edit($id)
+    {
+        $edulevel = Edulevel::where('id', $id)->first();
+
+        return view('edulevel.edit', compact('edulevel'));
+    }
+
+    public function editProcess(Request $request, $id)
+    {
+        Edulevel::where('id', $id)->update([
+            'name' => $request->name,
+            'desc' => $request->desc,
+        ]);
+
+        return redirect('edulevels')->with('updated', 'Jenjang berhasil diubah!');
     }
 }
