@@ -46,13 +46,13 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="{{ url('home') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-puzzle-piece"></i>Jenjang </a>
+                        <a href="{{ url('edulevels') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Edulevel </a>
                     </li>
                     <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-puzzle-piece"></i>Program </a>
+                        <a href="{{ url('programs') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Program </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -190,8 +190,6 @@
         <!-- Header-->
         @yield('breadcrumbs')
         @yield('content')
-        
-        
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
