@@ -38,7 +38,7 @@
                     </div>
                     <div class="form-group">
                         <label for="desc">Deskripsi :</label>
-                        <input type="text" name="desc" id="desc" class="form-control" value="{{ $edulevel->desc }}" autofocus required>
+                        <input type="text" name="desc" id="desc" class="form-control" value="{{ $edulevel->desc }}" autofocus>
                     </div>
                     <button type="submit" class="btn btn-success">Ubah Data!</button>
                 </form>

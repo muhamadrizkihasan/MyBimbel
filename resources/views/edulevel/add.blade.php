@@ -37,7 +37,7 @@
                     </div>
                     <div class="form-group">
                         <label for="desc">Deskripsi :</label>
-                        <input type="text" name="desc" id="desc" class="form-control" autofocus required>
+                        <input type="text" name="desc" id="desc" class="form-control" autofocus>
                     </div>
                     <button type="submit" class="btn btn-primary">Tambah Data!</button>
                 </form>

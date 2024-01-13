@@ -18,10 +18,13 @@
 <div class="content mt-3">
     <div class="animated fadeIn">
         @if (session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
+            <div class="alert alert-primary">{{ session('success') }}</div>
         @endif
         @if (session('updated'))
             <div class="alert alert-success">{{ session('updated') }}</div>
+        @endif
+        @if (session('deleted'))
+            <div class="alert alert-danger">{{ session('deleted') }}</div>
         @endif
         <div class="card">
             <div class="card-header">
@@ -55,6 +58,13 @@
                                         <a href="{{ route('edit', $edulevel->id) }}" class="btn btn-success btn-sm">
                                             <i class="fa fa-pencil"></i> Edit
                                         </a>
+                                        <form action="{{ route('delete', $edulevel->id) }}" class="d-inline" method="post" onsubmit="return confirm('Yakin hapus data?')">
+                                            @csrf
+                                            @method('delete')
+                                            <button class="btn btn-danger btn-sm">
+                                                <i class="fa fa-trash"></i> Delete
+                                            </button>
+                                        </form>
                                     </div>
                                 </td>
                             </tr>
