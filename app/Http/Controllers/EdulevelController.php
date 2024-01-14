@@ -9,7 +9,7 @@ class EdulevelController extends Controller
 {
     public function data()
     {
-        $edulevels = Edulevel::all();
+        $edulevels = Edulevel::simplePaginate(5);
 
         return view('edulevel.data', compact('edulevels'));
     }

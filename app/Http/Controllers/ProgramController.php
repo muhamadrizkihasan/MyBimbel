@@ -14,7 +14,7 @@ class ProgramController extends Controller
     public function index()
     {
         // $programs = Program::all();
-        $programs = Program::with('edulevel')->get();
+        $programs = Program::with('edulevel')->simplePaginate(5);
 
         return view('program.index', compact('programs'));
     }
