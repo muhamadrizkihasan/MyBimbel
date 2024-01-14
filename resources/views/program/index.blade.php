@@ -42,23 +42,24 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Name</th>
+                            <th>Nama Program</th>
+                            <th>Edulevel</th>
                             <th>Info</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
-                    {{-- <tbody>
-                        @foreach ($edulevels as $edulevel)
+                    <tbody>
+                        @foreach ($programs as $program)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $edulevel->name }}</td>
-                                <td>{{ $edulevel->desc }}</td>
+                                <td>{{ $program->name }}</td>
+                                <td>{{ $program->edulevel->name }}</td>
+                                <td>{{ $program->info }}</td>
                                 <td>
                                     <div class="text-center">
-                                        <a href="{{ route('edit', $edulevel->id) }}" class="btn btn-success btn-sm">
+                                        <a href="{{ route('edit', $program->id) }}" class="btn btn-success btn-sm">
                                             <i class="fa fa-pencil"></i> Edit
                                         </a>
-                                        <form action="{{ route('delete', $edulevel->id) }}" class="d-inline" method="post" onsubmit="return confirm('Yakin hapus data?')">
+                                        <form action="{{ route('delete', $program->id) }}" class="d-inline" method="post" onsubmit="return confirm('Yakin hapus data?')">
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-danger btn-sm">
@@ -69,7 +70,7 @@
                                 </td>
                             </tr>
                         @endforeach
-                    </tbody> --}}
+                    </tbody>
                 </table>
             </div>
         </div>
