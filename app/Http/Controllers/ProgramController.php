@@ -15,6 +15,8 @@ class ProgramController extends Controller
     {
         // $programs = Program::all();
         $programs = Program::with('edulevel')->get();
+        // $programs = Program::onlyTrashed()->get();
+
 
         return view('program.index', compact('programs'));
     }
