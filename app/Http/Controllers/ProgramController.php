@@ -15,8 +15,6 @@ class ProgramController extends Controller
     {
         // $programs = Program::all();
         $programs = Program::with('edulevel')->get();
-        // $programs = Program::onlyTrashed()->get();
-
 
         return view('program.index', compact('programs'));
     }
@@ -146,5 +144,38 @@ class ProgramController extends Controller
         Program::where('id', $program->id)->delete();
 
         return redirect('/programs')->with('deleted', 'Program berhasil dihapus!');
+    }
+
+    public function trash()
+    {
+        $programs = Program::onlyTrashed()->get();
+
+        return view('program.trash', compact('programs'));
+    }
+
+    public function restore($id = null)
+    {
+        if ($id != null) {
+            $programs = Program::onlyTrashed()
+                            ->where('id', $id)
+                            ->restore();
+        } else {
+            $programs = Program::onlyTrashed()->restore();
+        }
+
+        return redirect('/programs')->with('success', 'Program berhasil di-restore!');
+    }
+    
+    public function delete($id = null)
+    {
+        if ($id != null) {
+            $programs = Program::onlyTrashed()
+                            ->where('id', $id)
+                            ->forceDelete();
+        } else {
+            $programs = Program::onlyTrashed()->forceDelete();
+        }
+
+        return redirect('/programs')->with('success', 'Program berhasil di-restore!');
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Program')
+@section('title', 'Data Program')
 
 @section('breadcrumbs')
     <div class="breadcrumbs">
@@ -32,8 +32,11 @@
                     <strong>Data Program</strong>
                 </div>
                 <div class="pull-right">
+                    <a href="{{ route('trash') }}" class="btn btn-danger btn-sm">
+                        <i class="fa fa-trash"></i> Trash
+                    </a>
                     <a href="{{ route('programs.create') }}" class="btn btn-primary btn-sm">
-                        <i class="fa fa-plus"></i> Add
+                        <i class="fa fa-plus"></i> Create
                     </a>
                 </div>
             </div>
@@ -67,7 +70,7 @@
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-danger btn-sm">
-                                                <i class="fa fa-trash"></i> Hapus
+                                                <i class="fa fa-close"></i> Hapus
                                             </button>
                                         </form>
                                     </div>

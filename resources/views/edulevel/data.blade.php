@@ -58,7 +58,7 @@
                                         <a href="{{ route('edit', $edulevel->id) }}" class="btn btn-success btn-sm">
                                             <i class="fa fa-pencil"></i> Edit
                                         </a>
-                                        <form action="{{ route('delete', $edulevel->id) }}" class="d-inline" method="post" onsubmit="return confirm('Yakin hapus data?')">
+                                        <form action="{{ route('deleteEdulevel', $edulevel->id) }}" class="d-inline" method="post" onsubmit="return confirm('Yakin hapus data?')">
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-danger btn-sm">
