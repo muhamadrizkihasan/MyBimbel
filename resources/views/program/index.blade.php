@@ -56,14 +56,17 @@
                                 <td>{{ $program->info }}</td>
                                 <td>
                                     <div class="text-center">
-                                        <a href="{{ route('edit', $program->id) }}" class="btn btn-success btn-sm">
-                                            <i class="fa fa-pencil"></i> Edit
+                                        <a href="{{ route('programs.show', $program->id) }}" class="btn btn-info btn-sm">
+                                            <i class="fa fa-eye"></i> Lihat
                                         </a>
-                                        <form action="{{ route('delete', $program->id) }}" class="d-inline" method="post" onsubmit="return confirm('Yakin hapus data?')">
+                                        <a href="{{ route('programs.edit', $program->id) }}" class="btn btn-success btn-sm">
+                                            <i class="fa fa-pencil"></i> Ubah
+                                        </a>
+                                        <form action="{{ route('programs.destroy', $program->id) }}" class="d-inline" method="post" onsubmit="return confirm('Yakin hapus data?')">
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-danger btn-sm">
-                                                <i class="fa fa-trash"></i> Delete
+                                                <i class="fa fa-trash"></i> Hapus
                                             </button>
                                         </form>
                                     </div>

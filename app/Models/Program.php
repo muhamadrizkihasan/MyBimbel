@@ -9,6 +9,8 @@ class Program extends Model
 {
     use HasFactory;
 
+    protected $hidden = ['created_at', 'updated_at'];
+
     public function edulevel()
     {
         return $this->belongsTo(Edulevel::class);

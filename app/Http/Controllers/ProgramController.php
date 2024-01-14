@@ -12,7 +12,8 @@ class ProgramController extends Controller
      */
     public function index()
     {
-        $programs = Program::all();
+        // $programs = Program::all();
+        $programs = Program::with('edulevel')->get();
 
         return view('program.index', compact('programs'));
     }
@@ -38,7 +39,9 @@ class ProgramController extends Controller
      */
     public function show(Program $program)
     {
-        //
+        $program->makeHidden(['edulevel_id']);
+
+        return view('program/show', compact('program'));
     }
 
     /**
