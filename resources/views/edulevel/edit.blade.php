@@ -34,11 +34,17 @@
                     @method('patch')
                     <div class="form-group">
                         <label for="name">Nama Jenjang :</label>
-                        <input type="text" name="name" id="name" class="form-control" value="{{ $edulevel->name }}" autofocus required>
+                        <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $edulevel->name) }}" autofocus>
+                        @error('name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="desc">Deskripsi :</label>
-                        <input type="text" name="desc" id="desc" class="form-control" value="{{ $edulevel->desc }}" autofocus>
+                        <input type="text" name="desc" id="desc" class="form-control @error('desc') is-invalid @enderror" value="{{ old('desc', $edulevel->desc) }}" autofocus>
+                        @error('desc')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-success">Ubah Data!</button>
                 </form>
