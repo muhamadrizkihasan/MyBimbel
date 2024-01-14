@@ -1,13 +1,13 @@
 @extends('layouts.main')
 
-@section('title', 'Program')
+@section('title', 'Detail Program')
 
 @section('breadcrumbs')
     <div class="breadcrumbs">
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Data Program</h1>
+                    <h1>Detail Program</h1>
                 </div>
             </div>
         </div>

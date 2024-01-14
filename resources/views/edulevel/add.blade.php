@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Edulevel')
+@section('title', 'Add Edulevel')
 
 @section('breadcrumbs')
     <div class="breadcrumbs">

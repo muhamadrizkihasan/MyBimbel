@@ -73,7 +73,7 @@ class ProgramController extends Controller
         // $program->student_price = $request->student_price;
         // $program->save();
 
-        return redirect('/programs')->with('success', 'Jenjang berhasil ditambahkan!');
+        return redirect('/programs')->with('success', 'Program berhasil ditambahkan!');
     }
 
     /**
@@ -91,7 +91,9 @@ class ProgramController extends Controller
      */
     public function edit(Program $program)
     {
-        //
+        $edulevels = Edulevel::all();
+
+        return view('program/edit', compact('program', 'edulevels'));
     }
 
     /**
@@ -99,7 +101,32 @@ class ProgramController extends Controller
      */
     public function update(Request $request, Program $program)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:2',
+            'edulevel_id' => 'required'
+        ], [
+            'edulevel_id.required' => 'The jenjang / edulevel field is required'
+        ]);
+
+        // Cara 1
+        // $program->name = $request->name;
+        // $program->edulevel_id = $request->edulevel_id;
+        // $program->student_price = $request->student_price;
+        // $program->student_max = $request->student_max;
+        // $program->info = $request->info;
+        // $program->save();
+
+        // Cara 2 : Mass Asignment
+        Program::where('id', $program->id)
+            ->update([
+            'name' => $request->name,
+            'edulevel_id' => $request->edulevel_id,
+            'student_price' => $request->student_price,
+            'student_max' => $request->student_max,
+            'info' => $request->info,
+        ]);
+
+        return redirect('/programs')->with('updated', 'Program berhasil diubah!');
     }
 
     /**

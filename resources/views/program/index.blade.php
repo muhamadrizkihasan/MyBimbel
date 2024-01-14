@@ -45,6 +45,7 @@
                             <th>Nama Program</th>
                             <th>Edulevel</th>
                             <th>Info</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
