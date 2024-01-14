@@ -41,7 +41,39 @@ class ProgramController extends Controller
             'edulevel_id.required' => 'The jenjang / edulevel field is required'
         ]);
 
-        return $request;
+        // Cara 1
+        // $program = new Program;
+        // $program->name = $request->name;
+        // $program->edulevel_id = $request->edulevel_id;
+        // $program->student_price = $request->student_price;
+        // $program->student_max = $request->student_max;
+        // $program->info = $request->info;
+        // $program->save();
+
+        // Cara 2 : Mass Asignment
+        // Program::create([
+        //     'name' => $request->name,
+        //     'edulevel_id' => $request->edulevel_id,
+        //     'student_price' => $request->student_price,
+        //     'student_max' => $request->student_max,
+        //     'info' => $request->info,
+        // ]);
+        
+        // Cara 3 : Quick Mass Asignment
+        Program::create($request->all());
+
+        // Cara 4 : Gabungan Cara 1 & 2
+        // $program = Program::create([
+        //     'name' => $request->name,
+        //     'edulevel_id' => $request->edulevel_id,
+        //     'student_price' => $request->student_price,
+        //     'student_max' => $request->student_max,
+        //     'info' => $request->info,
+        // ]);
+        // $program->student_price = $request->student_price;
+        // $program->save();
+
+        return redirect('/programs')->with('success', 'Jenjang berhasil ditambahkan!');
     }
 
     /**
