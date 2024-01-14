@@ -32,7 +32,7 @@
                     <strong>Data Program</strong>
                 </div>
                 <div class="pull-right">
-                    <a href="{{ route('add') }}" class="btn btn-primary btn-sm">
+                    <a href="{{ route('programs.create') }}" class="btn btn-primary btn-sm">
                         <i class="fa fa-plus"></i> Add
                     </a>
                 </div>

@@ -40,7 +40,7 @@
                     </div>
                     <div class="form-group">
                         <label for="desc">Deskripsi :</label>
-                        <input type="text" name="desc" id="desc" class="form-control @error('desc') is-invalid @enderror" value="{{ old('desc') }}" autofocus>
+                        <input type="text" name="desc" id="desc" class="form-control @error('desc') is-invalid @enderror" value="{{ old('desc') }}">
                         @error('desc')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
